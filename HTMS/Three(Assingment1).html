@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Assignment1</title>
+    <script src="../Script/angular.js"></script>
+</head>
+
+<body ng-app="myApp">
+<div ng-controller="myController">
+<button ng-click="NextElement()">Next</button>
+    <h1>Fibo Series</h1>
+    <ol>
+        <li ng-repeat="n in FiboCollection">{{n}}</li>
+    </ol>
+</div>
+
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller('myController',function($scope){
+
+        $scope.FiboCollection = [1,2];
+
+        $scope.NextElement=function()
+        {
+            var first=$scope.FiboCollection[$scope.FiboCollection.length-1];
+            var second=$scope.FiboCollection[$scope.FiboCollection.length-2];
+            var Next = first+second;
+            $scope.FiboCollection.push(Next);
+        }
+    })
+
+</script>
+</body>
+</html>
