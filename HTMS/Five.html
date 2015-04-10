@@ -12,7 +12,7 @@
     <button ng-click="removeName()">Remove</button>
     <h1>List 1</h1>
     <ol>
-        <li ng-repeat="n in names">{{n}}</li>
+        <li ng-repeat="n in names">{{n|capFilter}}</li>
     </ol>
 </div>
 <div ng-controller="myCtrl">
@@ -21,7 +21,7 @@
     <button ng-click="removeName()">Remove</button>
     <h1>List 2</h1>
     <ol>
-        <li ng-repeat="n in names">{{n}}</li>
+        <li ng-repeat="n in names | myFilter">{{n}}</li>
     </ol>
 </div>
 <script>
@@ -31,11 +31,7 @@
 
             items:['Name 1','Name2'],
             addName : function(name){
-               this.items.push(name);
-                if(items.length==4) {
-                    alert("capacity reached");
-                    this.items = [];
-                }
+                this.items.push(name);
             },
             removeName : function(name){
                 this.items.pop();
@@ -56,6 +52,29 @@
         $scope.names=myService.items;
     }]);
 
+    app.filter('myFilter',function(){
+
+        var filter = function(items){
+            var filtered = [];
+
+            for(var i=0;i<items.length;i++)
+            {
+                if(items[i].search(/day/)!=-1)
+                {
+                    filtered.push(items[i]);
+                }
+            }
+        return filtered;
+        }
+        return filter;
+    })
+
+    app.filter('capFilter',function(){
+        return function(text)
+        {
+           return text.toString().toUpperCase();
+        }
+    })
 </script>
 
 </body>
