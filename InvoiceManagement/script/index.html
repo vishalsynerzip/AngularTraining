@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Invoice Management</title>
+    <script src="../js/jquery-2.1.3.js"></script>
+    <script src="../js/angular.js"></script>
+    <script src="../js/angular-ui-router.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+</head>
+<body ng-app="InvoiceApp">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                 <!--   <a ui-sref="state1">State 1</a> |
+                    <a ui-sref="state1.list">State1 List</a> |
+                    <a ui-sref="state2">State2</a>-->
+                    <li class="active"><a ui-sref="invoicelist">Main <span class="sr-only">(current)</span></a></li>
+                    <li><a ui-sref="addcustomer">Add Customer</a></li>
+                    <li><a ui-sref="addinvoice">Add Invoice</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div ui-view>  </div>
+<!--Enter Customer Name : <input type="text" ng-model="name" placeholder="Name">
+    Enter Customer Name : <input type="text" ng-model="address" placeholder="Address">
+    </br>
+<button class="btn btn-primary" ng-click="addCust()" text="Add">Add </button>
+
+<ol>
+    <li ng-repeat="n in custlist">{{n.name +" "+n.address}}</li>
+</ol>
+</div>-->
+
+<script src="app.js"></script>
+<script src="customer/customer.module.js"></script>
+<script src="customer/controller/customer.controller.js"></script>
+<script src="customer/services/customer.service.js"></script>
+</body>
+</html>
