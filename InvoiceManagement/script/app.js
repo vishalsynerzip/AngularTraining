@@ -1,7 +1,7 @@
 /**
  * Created by vishalp on 4/21/2015.
  */
-var app = angular.module('InvoiceApp',['ui.router']);
+var app = angular.module('InvoiceApp',['ui.router','invoice','customer']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/invoicelist"); // By default route to state1

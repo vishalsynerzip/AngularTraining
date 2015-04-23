@@ -31,7 +31,7 @@
                  <!--   <a ui-sref="state1">State 1</a> |
                     <a ui-sref="state1.list">State1 List</a> |
                     <a ui-sref="state2">State2</a>-->
-                    <li class="active"><a ui-sref="invoicelist">Main <span class="sr-only">(current)</span></a></li>
+                    <li><a ui-sref="invoicelist">Main</a><span class="sr-only">(current)</span></li>
                     <li><a ui-sref="addcustomer">Add Customer</a></li>
                     <li><a ui-sref="addinvoice">Add Invoice</a></li>
                 </ul>
@@ -39,7 +39,7 @@
         </div><!-- /.container-fluid -->
     </nav>
     <div ui-view>  </div>
-<!--Enter Customer Name : <input type="text" ng-model="name" placeholder="Name">
+<!--Enter Customer Name : <input type="text" ng-model="name" placeholder="Name"> <span class="sr-only">(current)</span>
     Enter Customer Name : <input type="text" ng-model="address" placeholder="Address">
     </br>
 <button class="btn btn-primary" ng-click="addCust()" text="Add">Add </button>
@@ -53,5 +53,8 @@
 <script src="customer/customer.module.js"></script>
 <script src="customer/controller/customer.controller.js"></script>
 <script src="customer/services/customer.service.js"></script>
+    <script src="invoice/invoice.module.js"></script>
+<script src="invoice/controller/invoice.controller.js"></script>
+<script src="invoice/services/invoice.services.js"></script>
 </body>
 </html>

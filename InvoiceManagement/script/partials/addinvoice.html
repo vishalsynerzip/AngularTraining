@@ -1,25 +1,41 @@
 <div class="container">
     <div class="row clearfix">
-        <div class="col-md-4 column">
-            <form role="form">
-                <div class="form-group">
-                    <label for="customername">Customer Name : </label><input type="text" ng-model="name" class="form-control" id="customername" />
+        <div class="col-md-4 column" ng-controller="invoiceCntrl">
+            <form role="form" ng-controller="itemlistCntrl">
+                <div class="form-group" ng-controller="customerCntrl">
+                    <label for="custSelect" >Customer Name : </label> <select id="custSelect" class="form-control" ng-model="custlist.id"
+                                                                              ng-options="opt as opt.name for opt in custlist">
+
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="invoicenumber">Invoice Number : </label><input type="text" ng-model="address" class="form-control" id="invoicenumber" />
+                    <label for="invoicenumber">Invoice Number : </label><input type="text" class="form-control" id="invoicenumber" />
                 </div>
                 <div class="form-group">
-                    <label for="invoicename">Item title : </label><input type="text" ng-model="name" class="form-control" id="invoicename" />
+                    <label for="itemname">Item title : </label><select type="text" ng-model="itemtitle" class="form-control" id="itemname">
+                      <option>Apple</option>
+                        <option>Pear</option>
+                        <option>Banana</option>
+                        <option>Orange</option>
+                        </select>
                 </div>
                 <div class="form-group">
-                    <label for="quantity">Quantity : </label><input type="text" ng-model="address" class="form-control" id="quantity" />
+                    <label for="price">Price : </label><input type="text" ng-model="cost" class="form-control" id="price" />
                 </div>
-                <button type="submit" onclick="addItem()" class="btn btn-default">Add Item</button>
                 <div class="form-group">
-                    <label for="totalcost">Total Cost : </label><input type="text" ng-model="name" class="form-control" id="totalcost" />
+                    <label for="quantity">Quantity : </label><input type="text" ng-model="quantity" class="form-control" id="quantity" />
                 </div>
-                <button type="submit" onclick="addInvoice()" class="btn btn-default">Submit Invoice</button>
+                <button type="submit" ng-click="additem()" class="btn btn-default">Add Item</button>
+                <div class="form-group">
+                    <label for="tcst">Total Cost : </label><input type="text" ng-model="totalcost" class="form-control" id="tcst" />
+                </div>
+                <button type="submit" ng-click="addInvoice()" class="btn btn-default">Submit Invoice</button>
             </form>
+        </div>
+        <div class="col-md-4 column" ng-controller="itemlistCntrl">
+            <ol>
+                <li ng-repeat="n in itemlst">{{n.itemtitle +" "+ n.quantity+" "+n.cost}}</li>
+            </ol>
         </div>
     </div>
 </div>
