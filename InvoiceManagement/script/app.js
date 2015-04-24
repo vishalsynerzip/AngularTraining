@@ -18,5 +18,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('addinvoice', {
             url: "addinvoice",
             templateUrl: "partials/addinvoice.html"
+        })//customerlist
+        .state('customerlist', {
+            url: "customerlist",
+            templateUrl: "partials/customerlist.html"
         })
+
 });

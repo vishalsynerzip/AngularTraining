@@ -13,7 +13,7 @@ angular.module('invoice').factory('invoiceService',[function(){
 angular.module('invoice').factory('itemService',[function(){
     return({
         itemlist : new Array(),
-        totalcst:'',
+        totalcst:0,
         additemlist : function(itemdetails){
             this.itemlist.push(itemdetails);
         },

@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row clearfix" ng-controller="customerCntrl">
+        <div class="col-md-12 column">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>
+                        #
+                    </th>
+                    <th>
+                        Customer ID
+                    </th>
+                    <th>
+                        Customer Name
+                    </th>
+                    <th>
+                        Customer Address
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="cust in custlist">
+                    <td>
+                        #
+                    </td>
+                    <td ng-model="cust.custid">
+                    {{cust.custid}}
+                    </td>
+                    <td>
+                        {{cust.name}}
+                    </td>
+                    <td ng-model="cust.address">
+                        {{cust.address}}
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,3 +1,74 @@
-<div>
-  <h1>  InvoiceList </h1>
+<div class="container">
+  <div class="row clearfix" ng-controller="invoiceCntrl">
+    <div class="col-md-12 column">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>
+            Invoice ID
+          </th>
+          <th>
+            Customer ID
+          </th>
+          <th>
+            Invoice Detail
+          </th>
+          <th>
+            Total Amount
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="invoices in invoicelst">
+          <td>
+            {{invoices.invoiceid}}
+          </td>
+          <td>
+            {{invoices.custid}}
+          </td>
+          <td>
+            <table class="table">
+              <thead>
+              <tr>
+                <th>
+                  Item Title
+                </th>
+                <th>
+                  Quantity
+                </th>
+                <th>
+                  Price
+                </th>
+                <th>
+                  subTotal
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+     <tr ng-repeat="item in invoices.itemlst">
+       <td>
+         {{item.itemtitle}}
+       </td>
+       <td>
+         {{item.cost}}
+       </td>
+       <td>
+         {{item.quantity}}
+       </td>
+       <td>
+         {{item.cost*item.quantity}}
+       </td>
+     </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            {{invoices.totalcost}}
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
